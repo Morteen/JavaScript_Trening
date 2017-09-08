@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JavaScript trening</title>
+<link rel="stylesheet" type="text/css" href="JavaScriptTreningStyle.css">
+</head>
+<body id="body">
+<div class="header">
+	<h1 id="heading">JavaScript trening</h1>
+	<p>Morten</p>
+</div>
+<div class="container">
+<form method="post" action="something.php" name="myForm" onsubmit="return validationForm()">
+<div>
+	<label>Fornavn</label>
+	<input type="text" name="fornavn" id="fornavn"/>
+
+</div>
+<br/>
+<div>
+	<label>Etternavn</label>
+	<input type="text" name="etternavn" id="etternavn"/>
+
+</div>
+<br/>
+<label>Bakgrund</label>
+<select name="background" id="background" onchange="changebackgrond(this)">
+	<option value="red">Rød</option>
+	<option value="blue">Blå</option>
+	<option value="green">Grønn</option>
+</select>
+	<br/>
+	<input type="submit" name="Submit"/>
+</form>
+</div>
+
+<script type="text/javascript">
+      //lage en array
+	var colors=['red','blue','green']
+	colors2= new Array('red','blue','green');
+//legge til en verdi i arrayen (alltid til slutt med push)
+	colors.push('purple');
+	//colors.length finner lengden på arrayen
+	//colors.sort sorterer arrayen
+	colors.sort();//colors.reverse();
+	var numbers =[33,44,55,6,9];
+	//forEach loop for å iterere en array
+	numbers.forEach(function(number){
+//console.log(number);
+	});
+	for(i=0;i<numbers.length;i++){
+		console.log(numbers[i]);
+	}
+	//Switch statement i JavaScript
+/*var fruit ='eple';
+switch(fruit){
+	case "banana":
+	alert("Jeg hataer bananer")
+		break;
+		case "apple":
+		alert("Riktig");
+		break;
+		default:
+		alert("Jeg elsker frukt");
+		break;
+}*/
+//JavaScript objekt
+var person={
+	fnavn:"Morten",
+	enavn:"Olsen",
+	alder:44,
+
+
+fullnavn:function(){
+	return this.fnavn+" "+this.enavn;
+}
+}
+//en annen måte å lage ey JS objekt på
+var apple= new Object();
+apple.color="red";
+apple.shape ="round";
+apple.describe=function(){
+	return "Et eple har denne fargen "+this.color+" og "+ "er " +this.shape+" i formen";
+}
+//Eller slik
+function Frukt(navn, farge,shape){
+	this.navn=navn;
+	this.farge=farge;
+	this.shape=shape;
+
+	this.beskriv= function(){
+		return this.navn+' '+this.farge+' '+this.shape;
+	}
+}
+
+var eple= new Frukt("mitt eple","gult","rundt");
+
+
+//Event handling
+function doClick(){
+	alert("Du trykket meg!!");
+}
+//Bytte tekst med getElement
+function changeText(){
+	var heading=document.getElementById("heading");
+	heading.innerHTML="Dette funker også";
+}
+function showDate(){
+	var time = document.getElementById("time");
+	time.innerHTML=Date();
+
+}
+function clearDate(){
+	var time = document.getElementById("time");
+	time.innerHTML="";
+
+}
+console.log(eple.beskriv());
+
+
+//forandre bakgrund ut fra valg på en selectlist
+function changebackgrond(x){
+var body = document.getElementById("body");
+body.style.backgroundColor=x.value;
+}
+
+function validationForm(){
+	var firstname= document.forms["myForm"]["fornavn"].value;
+	var lastname= document.forms["myForm"]["etternavn"].value;
+	if(firstname==null||firstname==""||lastname==null||lastname==""){
+		alert("Feltene må være utfylt");
+		return false;
+	}
+if(firstname.length<2||lastname.length<2){
+alert("Navnenen må være på minimum 2 karakterer");
+		return false;
+}
+}
+
+</script>
+</body>
+</html>
