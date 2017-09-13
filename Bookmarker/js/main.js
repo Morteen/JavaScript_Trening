@@ -17,8 +17,7 @@ var bookMark={
 	url:siteUrl
 
 }
-siteName.innerHTML("");
-siteUrl.innerHTML("");
+//alert(siteName+ " "+siteUrl);
 
 
 
@@ -72,17 +71,19 @@ var bookmarksResult=document.getElementById("bookmarksResult");
 
 //bygg output
 bookmarksResult.innerHTML="";
+
 for(var i =0;i<bookmarks.length;i++){
+
 	var name= bookmarks[i].name;
 	var url=bookmarks[i].url;
 
 
-	bookmarksResult.innerHTML+='<div class="well">'+
+	bookmarksResult.innerHTML+='<td>'+
 	'<h3>'+name+
 	'<a class="btn btn-default" target=_"blank" href="'+url+'">Visit</a>'+
 	'<a onclick="deleteBookmark(\''+url+'\') " class="btn btn-danger" href="#">Delete</a>'+
 	
-	'</h3>'+'</div>';
+	'</h3>'+'</td>';
 }
 }
 //validering
