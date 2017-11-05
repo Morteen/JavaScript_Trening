@@ -108,8 +108,8 @@ ul.todo li {
   font-weight: 500;
   color: #444;
   line-height: 22px;
-  text-decoration: none;
-
+ 
+text-decoration-style: none;
   background: #fff;
   border-radius: 5px;
   position: relative;
@@ -132,7 +132,7 @@ ul.todo li .buttons button{
 	height: 22px;
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	left: 90%;
 	margin: -11px 0 0 -11px;
 
 }

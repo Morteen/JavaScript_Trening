@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+   <style>
+   body{
+     /*background-image: url('image/sample.png');*/
+       
+   }
+   .wrapper{
+    display:grid;
+          /* grid-template-columns: 1fr 2fr 1fr;*/
+          grid-template-columns: 1fr 2fr 1fr;
+          grid-auto-rows: minmax(100px,auto);
+           grid-gap: 1em;
+           justify-item:end;
+
+   }
+   
+       .wrapper >div{
+           background:#eee;
+           padding:1em;
+            border:1px solid #333;
+            opacity: 0.5;
+
+           
+       }
+       .wrapper> div:nth-child(odd){
+           background:#ddd;
+       }
+       .box-1{
+        /*align-self: start;*/
+        grid-column:1/3;
+         grid-row: 1/3;
+
+       }
+       .box-2{
+       /*align-items: end;*/
+       grid-column:3;
+       grid-row: 1/3;
+        
+       }
+       .box-3{
+        /*justify-self:end;*/
+        gridcolumn:2/4;
+        grid-row:3;
+         background-image:url("image/bilde.jpg");
+         
+       }
+       .box-4{
+        grid-column:1;
+        grid-row:2/4;
+      }
+      #test img{
+        height: 100%;
+        width: 100%;
+      }
+       
+      
+   </style>
+    <title>Css grid</title>
+      
+</head>
+<body>
+  <div class="wrapper">
+
+  <div class="box box-1">Box 1</div>
+   <div class="box box-2">Box 2</div>
+    <div class="box box-3">Box 3
+      
+    </div>
+     <div class="box box-4">Box 4</div>
+  </div>
+  <div>
+  </div id="test">
+  <img src="image/bilde.jpg">
+  <div>
+    </body>
+</html>

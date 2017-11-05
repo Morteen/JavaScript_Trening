@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+   <style>
+   .wrapper{
+    display:grid;
+           grid-template-columns:70% 30%;
+           /*grid-column-gap:1em;
+           grid-row-gap:1em;
+           grid-gap er det samme som disse to til sammen
+           */
+
+           grid-gap:1em;
+   }
+       .wrapper >div{
+           background:#eee;
+           padding:1em;
+       }
+       .wrapper> div:nth-child(odd){
+           background:#ddd;
+       }
+   </style>
+    <title>Css grid</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div>
+      Lorem ipsum dolor sit
+  </div>
+  <div>
+      Lorem ipsum dolor sit
+  </div>
+  <div>
+      Lorem ipsum dolor sit
+  </div>
+  <div>
+      Lorem ipsum dolor sit
+  </div>
+  <div>
+      Lorem ipsum dolor sit
+  </div>
+  <div>
+      Lorem ipsum dolor sit
+  </div>
+    </body>
+</html>
