@@ -1,0 +1,50 @@
+
+<div id="regDel">
+<form id="myForm">
+ 
+    <div class="form-group">
+ <input type="text"placeholder="Fornavn" class="form-control"#fname/>
+ <input  class="form-control"placeholder="Etter navn" type="text"#ename>
+
+
+ 
+ <input  class="form-control"placeholder="Trinn"type="number"#trinn>
+ <input  class="form-control"placeholder="Klasse"type="text"#klasse>
+
+
+
+ <input  class="form-control"placeholder="Telefon"type="number"#konTlf>
+  <textarea name="" id="" cols="30" rows="10"class="form-control"placeholder="Spesielle opplysninger"type="text"#info></textarea>
+                 <!--fname,ename,trinn,klasse,kontaktTlf,info-->
+                </div>
+<button id="btn" class="btn btn-success" type="submit"(click)="addElev(fname.value,ename.value,trinn.value,klasse.value,konTlf.value,info.value)">Ny elev</button>
+
+</form>
+
+</div>
+<hr>
+<h2>Sjekk liste</h2>
+<div id="elevListe">
+<table  class="table table-hover">
+  <thead>
+      <td>Fornavn</td>
+      <td>Etternavn</td>
+      <td>Klasse </td>
+      
+      <td> Info</td>
+  </thead>
+  <tr *ngFor="let e of elever">
+     <td>{{e.fname}}</td>
+    <td>{{e.ename}}</td>
+    <td> {{e.trinn}}{{elev.klasse}}</td>
+    
+  
+    <td ><a (click)="info.hide = !info.hide">Vis info</a> <div #info [hidden]="!info.hide">{{e.info}}</div>|
+      <a (click)="tlf.hide = !tlf.hide">Vis telefon</a> <div #tlf [hidden]="!tlf.hide">{{e.kontaktTlf}}</div>
+    </td>
+    <td>
+      
+      
+  </tr>
+</table>
+</div>
